@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { AuthService } from './../service/auth.service';
 import { User } from './../model/User';
 import { Tema } from '../model/Tema';
