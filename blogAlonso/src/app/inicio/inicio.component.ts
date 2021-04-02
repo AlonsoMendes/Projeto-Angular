@@ -1,4 +1,3 @@
-import { Observable } from 'rxjs';
 import { AuthService } from './../service/auth.service';
 import { User } from './../model/User';
 import { Tema } from '../model/Tema';
@@ -34,6 +33,7 @@ export class InicioComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0,0)
 
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
