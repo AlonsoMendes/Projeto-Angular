@@ -9,6 +9,7 @@ import { User } from '../model/User';
   providedIn: 'root'
 })
 export class AuthService {
+  baseUrl: any;
 
   constructor(
     private http: HttpClient
@@ -20,6 +21,11 @@ export class AuthService {
 
   cadastrar(user: User): Observable<User>{
     return this.http.post<User>('http://localhost:8080/usuarios/cadastrar', user)
+  }
+
+  atualizar(user: User): Observable<User> {
+    return this.http.put<User>('http://localhost:8080/usuarios', user,
+    {headers: {'Authorization': environment.token}})
   }
 
   getByIdUser(id: number): Observable<User>{
